@@ -94,6 +94,11 @@ body {
     font-size: 30px;
     cursor: pointer;
     transform: translateY(-50%);
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 20px;
 }
 .dots {
     position: fixed;
@@ -118,4 +123,15 @@ body {
 
 .active {
     background-color: #717171;
+}
+.view-more {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.view-more:hover {
+    background-color: #333;
 }
