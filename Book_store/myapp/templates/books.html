@@ -1,0 +1,60 @@
+{%load static%}
+{% url 'books' as books_url %}
+{% url 'authors' as authors_url %}
+{% url 'events' as events_url %}
+{% url 'pricing' as pricing_url %}
+
+{% block content%}
+{% with request.path as path %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="{% static 'script.js' %}"></script>  
+    <title>Books</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{% static 'images/logo.jpg' %}" alt="Website Logo"> 
+            </div>
+            <ul>
+                <li class="{% if path == 'books_url' %}active{% endif %}"><a href="{% url 'books' %}">Books</a></li>
+                <li class="{% if path == 'authors_url' %}active{% endif %}"><a href="{% url 'authors' %}">Authors</a></li>
+                <li class="{% if path == 'events_url' %}active{% endif %}"><a href="{% url 'events' %}">Events</a></li>
+                <li class="{% if path == 'pricing_url' %}active{% endif %}"><a href="{% url 'pricing' %}">Pricing</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+        <div class="book-container">
+        <div class="book-info">
+            <h2>LIGHT COLLECTION</h2>
+            <h1>King kong theory</h1>
+            <p>Virginie Despentes</p>
+            <button class="view-more">View more</button>
+        </div>
+        <div class="book-cover">
+            <img src="{% static 'images/KING-KONG-THEORY.jpg' %}" alt="King Kong Theory">
+        </div>
+        </div>
+    </main>
+    <div class="arrow" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+    <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+</body>
+</html>
+{% endwith %}
+{% endblock %}

@@ -1,0 +1,54 @@
+{% load static %}
+{% url 'books' as books_url %}
+{% url 'authors' as authors_url %}
+{% url 'events' as events_url %}
+{% url 'pricing' as pricing_url %}
+
+{% block content %}
+{% with request.path as path %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <title>Events</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{% static 'images/logo.jpg' %}" alt="Website Logo"> 
+            </div>
+            <ul>
+                <li class="{% if path == 'books_url' %}active{% endif %}"><a href="{% url 'books' %}">Books</a></li>
+                <li class="{% if path == 'authors_url' %}active{% endif %}"><a href="{% url 'authors' %}">Authors</a></li>
+                <li class="{% if path == 'events_url' %}active{% endif %}"><a href="{% url 'events' %}">Events</a></li>
+                <li class="{% if path == 'pricing_url' %}active{% endif %}"><a href="{% url 'pricing' %}">Pricing</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <div id="content-main">
+        <ul class="object-tools">
+          <li>
+              <a href= {{ previous_month }}>
+                  Previous month
+              </a>
+          </li>
+          <li>
+              <a href={{ next_month }}>
+                  Next month
+              </a>
+          </li>
+      </ul>
+
+      {{ calendar }}
+
+</body>
+</html>
+
+{% endwith %}
+{% endblock %}

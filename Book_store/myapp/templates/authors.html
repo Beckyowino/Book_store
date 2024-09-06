@@ -1,0 +1,83 @@
+{% load static %}
+{% url 'books' as books_url %}
+{% url 'authors' as authors_url %}
+{% url 'events' as events_url %}
+{% url 'pricing' as pricing_url %}
+
+{% block content %}
+{% with request.path as path %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Authors</title>
+</head>
+<body class="authors">
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{% static 'images/logo.jpg' %}" alt="Website Logo"> 
+            </div>
+            <ul>
+                <li class="{% if path == 'books_url' %}active{% endif %}"><a href="{% url 'books' %}">Books</a></li>
+                <li class="{% if path == 'authors_url' %}active{% endif %}"><a href="{% url 'authors' %}">Authors</a></li>
+                <li class="{% if path == 'events_url' %}active{% endif %}"><a href="{% url 'events' %}">Events</a></li>
+                <li class="{% if path == 'pricing_url' %}active{% endif %}"><a href="{% url 'pricing' %}">Pricing</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="title">Authors</h1>
+        <div class="filter">
+            <button class="active">All</button>
+            <button>XIX</button>
+            <button>XX</button>
+            <button>XXI</button>
+        </div>
+
+        <div class="authors-container">
+            <div class="author-card">
+                <div class="image-container">
+                    <img src="{% static 'stefan.jpg' %}" alt="Stefan Zweig">
+                    <div class="shape"></div>
+                    <div class="arrow"></div>
+                </div>
+                <h3>Stefan Zweig</h3>
+                <p>Writer and biographer</p>
+                <button>View more</button>
+            </div>
+
+            <div class="author-card">
+                <div class="image-container">
+                    <img src="{% static 'virginie.jpg' %}" alt="Virginie Despentes">
+                    <div class="shape"></div>
+                    <div class="arrow"></div>
+                </div>
+                <h3>Virginie Despentes</h3>
+                <p>Writer and director</p>
+                <button>View more</button>
+            </div>
+
+            <div class="author-card">
+                <div class="image-container">
+                    <img src="{% static 'leo.jpg' %}" alt="Leo Tolstoy">
+                    <div class="shape"></div>
+                    <div class="arrow"></div>
+                </div>
+                <h3>Leo Tolstoy</h3>
+                <p>Writer</p>
+                <button>View more</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
+{% endwith %}
+{% endblock %}
