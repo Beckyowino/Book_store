@@ -31,22 +31,13 @@
             </ul>
         </nav>
     </header>
-    <div id="content-main">
-        <ul class="object-tools">
-          <li>
-              <a href= {{ previous_month }}>
-                  Previous month
-              </a>
-          </li>
-          <li>
-              <a href={{ next_month }}>
-                  Next month
-              </a>
-          </li>
-      </ul>
-
-      {{ calendar }}
-
+    <ul>
+        {% for event in events %}
+            <li>{{ event.summary }} - {{ event.start_time }} to {{ event.end_time }}</li>
+        {% empty %}
+            <li>No events found.</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
 

@@ -1,59 +1,100 @@
-{%load static%}
 {% url 'books' as books_url %}
 {% url 'authors' as authors_url %}
 {% url 'events' as events_url %}
 {% url 'pricing' as pricing_url %}
+{% load static %}
 
 {% block content%}
-{% with request.path as path %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="{% static 'script.js' %}"></script>  
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>  
     <title>Books</title>
 </head>
-<body>
+<!--{% static 'images/background.jpg' as background %}
+
+<body style="background-image: url('{{background}}');">-->
+  {% with request.path as path %}
+
     <header>
         <nav>
             <div class="logo">
                 <img src="{% static 'images/logo.jpg' %}" alt="Website Logo"> 
             </div>
             <ul>
-                <li class="{% if path == 'books_url' %}active{% endif %}"><a href="{% url 'books' %}">Books</a></li>
-                <li class="{% if path == 'authors_url' %}active{% endif %}"><a href="{% url 'authors' %}">Authors</a></li>
-                <li class="{% if path == 'events_url' %}active{% endif %}"><a href="{% url 'events' %}">Events</a></li>
-                <li class="{% if path == 'pricing_url' %}active{% endif %}"><a href="{% url 'pricing' %}">Pricing</a></li>
-
+                <li class="{% if path == books_url %}active{% endif %}"><a href="{% url 'books' %}">Books</a></li>
+                <li class="{% if path == authors_url %}active{% endif %}"><a href="{% url 'authors' %}">Authors</a></li>
+                <li class="{% if path == events_url %}active{% endif %}"><a href="{% url 'events' %}">Events</a></li>
+                <li class="{% if path == pricing_url %}active{% endif %}"><a href="{% url 'pricing' %}">Pricing</a></li>
             </ul>
         </nav>
     </header>
-    <main class="main-content">
-        <div class="book-container">
-        <div class="book-info">
-            <h2>LIGHT COLLECTION</h2>
-            <h1>King kong theory</h1>
-            <p>Virginie Despentes</p>
-            <button class="view-more">View more</button>
-        </div>
-        <div class="book-cover">
-            <img src="{% static 'images/KING-KONG-THEORY.jpg' %}" alt="King Kong Theory">
-        </div>
-        </div>
-    </main>
-    <div class="arrow" onclick="goBack()">
-        <i class="fas fa-arrow-left"></i>
-    </div>
-    <div class="dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-    </div>
 
+    <!-- Carousel Section -->
+    <div id="SimpleCarouselExample" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#SimpleCarouselExample" data-slide-to="0" class="active"></li>
+          <li data-target="#SimpleCarouselExample" data-slide-to="1"></li>
+          <li data-target="#SimpleCarouselExample" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Carousel Inner -->
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="book-info">
+                        <h2>LIGHT COLLECTION</h2>
+                        <h1>King Kong Theory</h1>
+                        <p>Virginie Despentes</p>
+                        <button class="view-more">View more</button>
+                    </div>
+                    <div class="book-cover">
+                        <img src="{% static 'images/KING-KONG-THEORY.jpg' %}" class="d-block w-100" alt="King Kong Theory Cover">
+                    </div>
+                </div>
+            <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="book-info">
+                        <h2>CURSED POETRY COLLECTION</h2>
+                        <h1>The Flowers of Evil</h1>
+                        <p>Charles Baudelaire</p>
+                        <button class="view-more">View more</button>
+                    </div>
+                    <div class="book-cover">
+                        <img src="{% static 'images/flowers_of_evil.jpg' %}" class="d-block w-100" alt="Flowers of Evil">
+                    </div>
+                </div>
+            <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="book-info">
+                        <h2>THINKERS COLLECTION</h2>
+                        <h1>Why the World Does Not Exist</h1>
+                        <p>Markus Gabriel</p>
+                        <button class="view-more">View more</button>
+                    </div>
+                    <div class="book-cover">
+                        <img src="{% static 'images/why_world.jpg' %}" class="d-block w-100" alt="Why the World Doesn't Exist Cover">
+                    </div>
+                </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <a class="carousel-control-prev" href="#SimpleCarouselExample" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#SimpleCarouselExample" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+    </div>
 </body>
 </html>
 {% endwith %}

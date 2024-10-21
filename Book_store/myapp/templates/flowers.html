@@ -1,11 +1,20 @@
+{% load static %}
+{% url 'books' as books_url %}
+{% url 'authors' as authors_url %}
+{% url 'events' as events_url %}
+{% url 'pricing' as pricing_url %}
+
+{% block content%}
+{% with request.path as path %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="{% static 'script.js' %}"></script>  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="script.js"></script> 
     <title>Flowers of evil</title>
     <style>
         body {
@@ -17,12 +26,13 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="logo.jpg" alt="Website Logo"> 
+                <img src="{% static 'images/logo.jpg' %}" alt="Website Logo"> 
             </div>
-                <li><a href="index.html">Books</a></li>
-                <li><a href="index.html">Authors</a></li>
-                <li><a href="index.html">Events</a></li>
-                <li><a href="index.html">Pricing</a></li>
+            <ul>
+                <li class="{% if path == 'books_url' %}active{% endif %}"><a href="{% url 'books' %}">Books</a></li>
+                <li class="{% if path == 'authors_url' %}active{% endif %}"><a href="{% url 'authors' %}">Authors</a></li>
+                <li class="{% if path == 'events_url' %}active{% endif %}"><a href="{% url 'events' %}">Events</a></li>
+                <li class="{% if path == 'pricing_url' %}active{% endif %}"><a href="{% url 'pricing' %}">Pricing</a></li>
             </ul>
         </nav>
     </header>
@@ -35,19 +45,13 @@
             <button class="view-more">View more</button>
         </div>
         <div class="book-cover">
-            <img src="flowers_of_evil.jpg" alt="Flowers of evil">
+            <img src="{% static 'images/flowers_of_evil.jpg' %}" alt="Flowers of evil">
         </div>
         </div>
     </main>
-    <div class="arrow" onclick="goBack()">
-        <i class="fas fa-arrow-left"></i>
-    </div>
-    <div class="dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-    </div>
-<script src="script.js"></script>  
 
 </body>
 </html>
+
+{% endwith %}
+{% endblock %}

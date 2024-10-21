@@ -21,3 +21,8 @@ db.sqlite3
 
 # Ignore the Thumbs.db file (if you're on Windows)
 Thumbs.db
+.pycache
+.log
+.csv
+.docx
+__init__.pyc

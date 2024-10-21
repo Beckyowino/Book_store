@@ -7,6 +7,7 @@ from .utils import EventCalendar
 from django.urls import reverse
 
 # Register your models here.
+'''
 class EventAdmin(admin.ModelAdmin):
     list_display = ['day', 'start_time', 'end_time', 'notes']
     change_list_template = 'events.html'
@@ -45,3 +46,4 @@ class EventAdmin(admin.ModelAdmin):
  
 admin.site.register(Event, EventAdmin)
 
+'''

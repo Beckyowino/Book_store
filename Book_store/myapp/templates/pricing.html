@@ -1,0 +1,82 @@
+{% load static %}
+{% url 'books' as books_url %}
+{% url 'authors' as authors_url %}
+{% url 'events' as events_url %}
+{% url 'pricing' as pricing_url %}
+
+{% block content%}
+{% with request.path as path %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="{% static 'script.js' %}"></script>  
+    <title>Pricing</title>
+</head>
+<body class="pricing-body">
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{% static 'images/logo.jpg' %}" alt="Website Logo"> 
+            </div>
+            <ul>
+                <li class="{% if path == 'books_url' %}active{% endif %}"><a href="{% url 'books' %}">Books</a></li>
+                <li class="{% if path == 'authors_url' %}active{% endif %}"><a href="{% url 'authors' %}">Authors</a></li>
+                <li class="{% if path == 'events_url' %}active{% endif %}"><a href="{% url 'events' %}">Events</a></li>
+                <li class="{% if path == 'pricing_url' %}active{% endif %}"><a href="{% url 'pricing' %}">Pricing</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Pricing</h1>
+        <div class="pricing-toggle">
+            <button id="monthly-btn" class="button active">Monthly</button>
+            <button id="annual-btn" class="b">Annual</button>
+        </div>
+
+        <div class="pricing-cards" id="pricing-cards">
+            <div class="card">
+                <h2>Individual</h2>
+                <p class="price" data-monthly="$10.99" data-annual="$100.99">$10.99</p>
+                <p>3 books/month</p>
+                <p>1 gift/month</p>
+                <p>Cancel whenever you want</p>
+                <button class="mt-auto">Get Individual subscription</button>
+            </div>
+            <div class="card">
+                <h2>Student</h2>
+                <p class="price" data-monthly="$5.99" data-annual="$45.99">$5.99</p>
+                <p>3 books/month</p>
+                <p>1 gift/month</p>
+                <p>Discount for eligible students</p>
+                <p>Cancel whenever you want</p>
+                <button class="mt-auto">Get Student subscription</button>
+            </div>
+            <div class="card">
+                <h2>Duo</h2>
+                <p class="price" data-monthly="$12.99" data-annual="$120.99">$12.99</p>
+                <p>6 books/month</p>
+                <p>2 gifts/month</p>
+                <p>Cancel whenever you want</p>
+                <button class="mt-auto">Get Duo subscription</button>
+            </div>
+            <div class="card">
+                <h2>Premium</h2>
+                <p class="price" data-monthly="$15.99" data-annual="$150.99">$15.99</p>
+                <p>10 books/month</p>
+                <p>1 gift/month</p>
+                <p>Subscription to our physical magazine MoonBooks</p>
+                <p>Cancel whenever you want</p>
+                <button class="mt-auto">Get Premium subscription</button>
+            </div>
+        </div>
+    </main>  
+</body>
+</html>
+
+{% endwith %}
+{% endblock %}

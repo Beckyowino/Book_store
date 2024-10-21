@@ -1,7 +1,7 @@
 function goBack() {
-    //window.history.back();
-    window.location.href = "flowers.html";
+    window.history.back();
 }
+
 document.querySelectorAll('.event').forEach(event => {
     event.addEventListener('mouseenter', function() {
         const imgSrc = this.getAttribute('data-img');
@@ -17,3 +17,35 @@ document.querySelectorAll('.event').forEach(event => {
         eventImage.style.display = 'none';
     });
 });
+
+//this is for pricing
+document.addEventListener("DOMContentLoaded", function () {
+    const monthlyButton = document.getElementById("monthly-btn");
+    const annualButton = document.getElementById("annual-btn");
+    const prices = document.querySelectorAll(".price");
+
+    monthlyButton.addEventListener("click", function () {
+        monthlyButton.classList.add("active");
+        annualButton.classList.remove("active");
+        prices.forEach(price => {
+            price.textContent = price.getAttribute("data-monthly");
+        });
+    });
+
+    annualButton.addEventListener("click", function () {
+        annualButton.classList.add("active");
+        monthlyButton.classList.remove("active");
+        prices.forEach(price => {
+            price.textContent = price.getAttribute("data-annual");
+        });
+    });
+});
+
+// Initialize the carousel
+$(document).ready(function() {
+    $('#SimpleCarouselExample').carousel({
+      interval: 5000, // change the interval to your needs
+      pause: 'hover'
+    });
+  });
+
