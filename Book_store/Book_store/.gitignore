@@ -26,3 +26,11 @@ Thumbs.db
 .csv
 .docx
 __init__.pyc
+.egg-info/
+dist/
+build/
+.pyc
+.tmp
+.temp
+.cache
+.bak
