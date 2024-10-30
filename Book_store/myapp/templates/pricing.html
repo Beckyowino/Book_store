@@ -13,12 +13,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'style.css' %}">
-    <script src="{% static 'script.js' %}"></script>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Pricing</title>
 </head>
 <body class="pricing-body">
     <header>
         <nav>
+            <div class="container">
             <div class="logo">
                 <img src="{% static 'images/logo.jpg' %}" alt="Website Logo"> 
             </div>
@@ -28,16 +30,27 @@
                 <li class="{% if path == 'events_url' %}active{% endif %}"><a href="{% url 'events' %}">Events</a></li>
                 <li class="{% if path == 'pricing_url' %}active{% endif %}"><a href="{% url 'pricing' %}">Pricing</a></li>
             </ul>
+            </div>
+            <div class="navbar-icons">
+                <a href="#" class="icon"><i class="fas fa-shopping-basket"></i></a>
+                <a href="#" class="icon"><i class="fas fa-user"></i></a>
+            </div>
+
         </nav>
     </header>
 
     <main>
+        <div class="header-container">
         <h1>Pricing</h1>
         <div class="pricing-toggle">
-            <button id="monthly-btn" class="button active">Monthly</button>
-            <button id="annual-btn" class="b">Annual</button>
+            <div class="toggle-switch">
+                <span id="toggle-slider"></span>
+                <button id="monthly-btn" class="toggle-option">Monthly</button>
+                <button id="annual-btn" class="toggle-option">Annual</button>
+            </div>
         </div>
-
+        </div>
+        
         <div class="pricing-cards" id="pricing-cards">
             <div class="card">
                 <h2>Individual</h2>
@@ -45,7 +58,9 @@
                 <p>3 books/month</p>
                 <p>1 gift/month</p>
                 <p>Cancel whenever you want</p>
+                <div class="button-container">
                 <button class="mt-auto">Get Individual subscription</button>
+                </div>
             </div>
             <div class="card">
                 <h2>Student</h2>
@@ -54,7 +69,9 @@
                 <p>1 gift/month</p>
                 <p>Discount for eligible students</p>
                 <p>Cancel whenever you want</p>
+                <div class="button-container">      
                 <button class="mt-auto">Get Student subscription</button>
+                </div>
             </div>
             <div class="card">
                 <h2>Duo</h2>
@@ -62,7 +79,9 @@
                 <p>6 books/month</p>
                 <p>2 gifts/month</p>
                 <p>Cancel whenever you want</p>
+                <div class="button-container">
                 <button class="mt-auto">Get Duo subscription</button>
+                </div>
             </div>
             <div class="card">
                 <h2>Premium</h2>
@@ -71,10 +90,145 @@
                 <p>1 gift/month</p>
                 <p>Subscription to our physical magazine MoonBooks</p>
                 <p>Cancel whenever you want</p>
+                <div class="button-container">
                 <button class="mt-auto">Get Premium subscription</button>
+                </div>
             </div>
         </div>
+        <div class="image-container">
+            <img src="{% static 'images/pricing_image.jpeg' %}" class="full-width-image" alt="Pricing Image">
+            <div class="centered">
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra odio malesuada ultricies luctus.
+                 Vestibulum in ullamcorper est. Mauris sed molestie mauris."</p>
+                <h3>Sandy Peterson</h3><h3>Director of International Editions</h3>
+                <div class="line"></div>
+                <h3>A C M E</h3></div>
+            </div>
+        <div class="quiz"><b>Do you have any question?</b><p>We have the answers</p></div>
+    
+        <button class="accordion">How does the Premium plan work?</button>
+        <div class="panel">
+        <p>This is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. 
+            These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or
+             overriding our default variables. It's also worth noting that just about any HTML can go within the 
+            .accordion-body, though the transition does limit overflow.</p>
+        </div>
+
+        <button class="accordion">How do I cancel my subscription?</button>
+        <div class="panel">
+        <p>This is the first item's accordion body. It is shown by default, until the collapse 
+            plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. 
+            You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can
+             go within the .accordion-body, though the transition does limit overflow.</p>
+        </div>
+
+        <button class="accordion">How do I change from one subscription plan to another?</button>
+        <div class="panel">
+        <p>This is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, 
+            though the transition does limit overflow.</p>
+        </div>
+        <button class="accordion">How does the Individual plan work?</button>
+        <div class="panel">
+        <p>This is the first item's accordion body. It is shown by default, until
+             the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the 
+            .accordion-body, though the transition does limit overflow.</p>
+        </div>
+        <button class="accordion">How does the Student plan work?</button>
+        <div class="panel">
+        <p>This is the first item's accordion body. It is shown by default, until
+             the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the 
+            .accordion-body, though the transition does limit overflow.</p>
+        </div>
+        <button class="accordion">How does the Duo plan work?</button>
+        <div class="panel">
+        <p>This is the first item's accordion body. It is shown by default, until
+             the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the 
+            .accordion-body, though the transition does limit overflow.</p>
+        </div>
+
+        <footer class="footer">
+            <div class="logo">
+                <img src="{% static 'images/logo.jpg' %}" alt="Website Logo"> 
+            </div>
+
+            <div class="footer-links">
+                <ul class="footer-section">
+                    <li>Books</li>
+                    <li>Authors</li>
+                    <li>Collections</li>
+                    <li>Events</li>
+                </ul>
+                <ul class="footer-section">
+                    <li>Legal warning</li>
+                    <li>Giveaway terms and conditions</li>
+                    <li>Legal bases of the draws</li>
+                </ul>
+                <ul class="footer-section">
+                    <li>Return policy</li>
+                    <li>Cookies policy</li>
+                    <li>Privacy policy</li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <p>Xname. All rights reserved</p>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="icon"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+        </footer>
+        
     </main>  
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const monthlyBtn = document.getElementById('monthly-btn');
+            const annualBtn = document.getElementById('annual-btn');
+            const toggleSlider = document.getElementById('toggle-slider');
+            const prices = document.querySelectorAll('.price');
+
+            const updatePrices = (isMonthly) => {
+                prices.forEach(price => {
+                    const monthlyPrice = price.getAttribute('data-monthly');
+                    const annualPrice = price.getAttribute('data-annual');
+                    price.textContent = isMonthly ? monthlyPrice : annualPrice;
+                });
+            };
+            monthlyBtn.addEventListener('click', () => {
+                toggleSlider.style.transform = 'translateX(0)'; // Move to the left
+                monthlyBtn.classList.add('active'); // Set Monthly as active
+                annualBtn.classList.remove('active'); // Remove active from Annual
+                updatePrices(true); // Update prices to monthly
+            });
+    
+            annualBtn.addEventListener('click', () => {
+                toggleSlider.style.transform = 'translateX(100%)'; // Move to the right
+                annualBtn.classList.add('active'); // Set Annual as active
+                monthlyBtn.classList.remove('active'); // Remove active from Monthly
+                updatePrices(false); // Update prices to annual
+            });
+        });
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            /* Toggle between adding and removing the "active" class,
+            to highlight the button that controls the panel */
+            this.classList.toggle("active");
+
+            /* Toggle between hiding and showing the active panel */
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+            panel.style.display = "none";
+            } else {
+            panel.style.display = "block";
+            }
+        });
+        }
+
+    </script>
+    
 </body>
 </html>
 

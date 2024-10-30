@@ -4,8 +4,8 @@ nav {
     display: flex; 
     align-items: center; 
     position: static;
+    justify-content: space-between;
 }
-
 .logo img {
     width: 40px; 
     height: auto; 
@@ -13,7 +13,10 @@ nav {
     object-fit: cover;
     transform: translateY(5px);
 }
-
+.container{
+    display: flex; 
+    align-items: center;
+}
 ul {
     list-style: none; 
     margin: 0; 
@@ -72,6 +75,11 @@ body {
     display: block;
     width: 100%;
     height: 100vh;
+    font-family: sans-serif;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+
 }
 
 .carousel-item {
@@ -79,12 +87,12 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%; /* Use full width */
-    padding: 20px; /* Add some padding to avoid touching edges */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: add a shadow for better visibility */
-    background-color: rgba(0, 0, 0, 0.7); /* Optional: darken background for contrast */
+    padding: 20px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7); 
     height: 100vh; /* Ensures each slide takes full viewport height */
-    position: relative; /* Ensure positioning context for child elements */
-    overflow: hidden; /* Hide overflow */
+    position: relative; 
+    overflow: hidden; 
 
 }
     
@@ -167,63 +175,212 @@ button {
     cursor: pointer;
     justify-content: flex-end;
 }
+.button-container {
+    margin-top: auto; /* Pushes the button to the bottom of the card */
+}
+.header-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    margin: 20px; /* Space below the header */
+}
 
 .pricing-toggle {
     text-align: center;
     margin: 20px 0;
 }
 
-.pricing-toggle button {
-    padding: 10px 20px;
-    margin: 0 5px;
-    border: none;
-    cursor: pointer;
+.toggle-switch {
+    display: flex;
+    position: relative;
+    width: 200px;
+    height: 40px;
+    background-color: #e0e7ff; /* Light background */
+    border-radius: 5px;
+    overflow: hidden;
 }
 
-.pricing-toggle .active {
-    background-color: #007bff;
-    color: white;
+.toggle-switch button {
+    flex: 1;
+    border: none;
+    background: none;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1; /* Keep text above slider */
+}
+
+.toggle-option.active {
+    font-weight: bold; /* Bold text for active option */
+
+}
+
+#toggle-slider {
+    position: absolute;
+    width: 50%; /* Half of toggle-switch width */
+    height: 100%;
+    background-color: #007bff; /* Active slider color */
+    border-radius: 5px;
+    transition: transform 0.3s ease;
 }
 
 .pricing-cards {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+    margin: 20px;
 }
 
 .card {
     flex: 1;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    flex-direction: column;
+    justify-content: space-between; /* Space between children */
+    border-right: 1px solid #070707;
     padding: 20px;
-    margin: 10px;
-    width: 200px;
+    min-width: 200px;
     text-align: center;
-    padding: 20px;
+    height: 300px; 
+    display: flex; 
 }
-
+.card:last-child {
+    border-right: none; /* Remove the bottom border from the last card */
+}
 .card .price {
     font-size: 24px;
     font-weight: bold;
-}
-
-.pricing-body{
-    font-family: sans-serif;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
 }
 
 .hidden-link {
     display: none;
 }
 
+.image-container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }  
+.full-width-image {
+    width: 100%; /* Make the image take the full width of the container */
+    height: 300px; /* Maintain the aspect ratio */
+    display: block; /* Remove any bottom space caused by inline images */
+}
+.line {
+    width: 70px;
+    height: 2px;
+    background-color: #ccc;
+    position: relative;
+    top: 15px;
+    margin: 0 auto;/* Center the line horizontally */
+}
+.quiz{
+    text-align: center;
+}
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  /* Style the accordion panel. Note: hidden by default */
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+
+  }
+  .footer {
+    width: 100%;
+    padding: 20px 40px;
+    margin-top: 40px;
+    background-color: #e2e2eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Footer logo */
+.footer-logo .logo-circle {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo .logo-text {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Footer links */
+.footer-links {
+    display: flex;
+    gap: 40px;
+    flex: 1;
+
+}
+
+.footer-section {
+    list-style: none;
+    color: #666;
+    flex-direction: column;
+
+}
+
+.footer-section li {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* Footer right side */
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.footer-right p {
+    color: #666;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icon {
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+}  

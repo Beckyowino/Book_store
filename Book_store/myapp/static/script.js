@@ -1,51 +1,17 @@
-function goBack() {
-    window.history.back();
-}
+document.addEventListener('DOMContentLoaded', () => {
+    const monthlyBtn = document.getElementById('monthly-btn');
+    const annualBtn = document.getElementById('annual-btn');
+    const toggleSlider = document.getElementById('toggle-slider');
 
-document.querySelectorAll('.event').forEach(event => {
-    event.addEventListener('mouseenter', function() {
-        const imgSrc = this.getAttribute('data-img');
-        const eventImage = document.getElementById('event-image');
-        eventImage.innerHTML = `<img src="${imgSrc}" alt="Event Image">`;
-        eventImage.style.display = 'block';
-        eventImage.style.left = `${event.getBoundingClientRect().left}px`;
-        eventImage.style.top = `${event.getBoundingClientRect().bottom + window.scrollY}px`;
+    monthlyBtn.addEventListener('click', () => {
+        toggleSlider.style.transform = 'translateX(0)'; // Move to the left
+        monthlyBtn.classList.add('active'); // Set Monthly as active
+        annualBtn.classList.remove('active'); // Remove active from Annual
     });
 
-    event.addEventListener('mouseleave', function() {
-        const eventImage = document.getElementById('event-image');
-        eventImage.style.display = 'none';
+    annualBtn.addEventListener('click', () => {
+        toggleSlider.style.transform = 'translateX(100%)'; // Move to the right
+        annualBtn.classList.add('active'); // Set Annual as active
+        monthlyBtn.classList.remove('active'); // Remove active from Monthly
     });
 });
-
-//this is for pricing
-document.addEventListener("DOMContentLoaded", function () {
-    const monthlyButton = document.getElementById("monthly-btn");
-    const annualButton = document.getElementById("annual-btn");
-    const prices = document.querySelectorAll(".price");
-
-    monthlyButton.addEventListener("click", function () {
-        monthlyButton.classList.add("active");
-        annualButton.classList.remove("active");
-        prices.forEach(price => {
-            price.textContent = price.getAttribute("data-monthly");
-        });
-    });
-
-    annualButton.addEventListener("click", function () {
-        annualButton.classList.add("active");
-        monthlyButton.classList.remove("active");
-        prices.forEach(price => {
-            price.textContent = price.getAttribute("data-annual");
-        });
-    });
-});
-
-// Initialize the carousel
-$(document).ready(function() {
-    $('#SimpleCarouselExample').carousel({
-      interval: 5000, // change the interval to your needs
-      pause: 'hover'
-    });
-  });
-
