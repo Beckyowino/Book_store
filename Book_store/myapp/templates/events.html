@@ -13,12 +13,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'events.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 
     <title>Events</title>
 </head>
 <body>
     <header>
         <nav>
+            <div class="container">
             <div class="logo">
                 <img src="{% static 'images/logo.jpg' %}" alt="Website Logo"> 
             </div>
@@ -27,17 +31,24 @@
                 <li class="{% if path == 'authors_url' %}active{% endif %}"><a href="{% url 'authors' %}">Authors</a></li>
                 <li class="{% if path == 'events_url' %}active{% endif %}"><a href="{% url 'events' %}">Events</a></li>
                 <li class="{% if path == 'pricing_url' %}active{% endif %}"><a href="{% url 'pricing' %}">Pricing</a></li>
-
             </ul>
+            </div>
+            <div class="navbar-icons">
+                <a href="#" class="icon"><i class="fas fa-shopping-basket"></i></a>
+                <a href="#" class="icon"><i class="fas fa-user"></i></a>
+            </div>
         </nav>
     </header>
-    <ul>
-        {% for event in events %}
-            <li>{{ event.summary }} - {{ event.start_time }} to {{ event.end_time }}</li>
-        {% empty %}
-            <li>No events found.</li>
-        {% endfor %}
-    </ul>
+    <div class="event-container">
+        <div class="event-header">
+            <button class="navigation" onclick="previousMonth()">&lt;</button>
+            <h1 id="month"></h1>
+            <button class="navigation" onclick="nextMonth()">&gt;</button>
+        </div>
+        <div id="calendar"></div>
+    </div>
+
+<script src="{% static 'events.js' %}"></script>
 </body>
 </html>
 
