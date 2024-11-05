@@ -15,3 +15,4 @@ document.addEventListener('DOMContentLoaded', () => {
         monthlyBtn.classList.remove('active'); // Remove active from Monthly
     });
 });
+

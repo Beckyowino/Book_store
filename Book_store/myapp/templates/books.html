@@ -11,7 +11,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="{% static 'script.js'%}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <title>Books</title>
 </head>
 <body>
@@ -35,73 +38,76 @@
             </div>
         </nav>
     </header>
-
-    <!-- Carousel Section -->
-    <div id="SimpleCarouselExample" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#SimpleCarouselExample" data-slide-to="0" class="active"></li>
-          <li data-target="#SimpleCarouselExample" data-slide-to="1"></li>
-          <li data-target="#SimpleCarouselExample" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Carousel Inner -->
-        <div class="carousel-inner">
-            <!-- Slide 1 -->
-                <div class="carousel-item active">
-                    <div class="book-info">
-                        <h2>LIGHT COLLECTION</h2>
-                        <h1>King Kong Theory</h1>
-                        <p>Virginie Despentes</p>
-                        <button class="view-more">View more</button>
-                    </div>
-                    <div class="book-cover">
-                        <img src="{% static 'images/KING-KONG-THEORY.jpg' %}" class="d-block w-100" alt="King Kong Theory Cover">
-                    </div>
-                </div>
-            <!-- Slide 2 -->
-                <div class="carousel-item">
-                    <div class="book-info">
-                        <h2>CURSED POETRY COLLECTION</h2>
-                        <h1>The Flowers of Evil</h1>
-                        <p>Charles Baudelaire</p>
-                        <button class="view-more">View more</button>
-                    </div>
-                    <div class="book-cover">
-                        <img src="{% static 'images/flowers_of_evil.jpg' %}" class="d-block w-100" alt="Flowers of Evil">
-                    </div>
-                </div>
-            <!-- Slide 3 -->
-                <div class="carousel-item">
-                    <div class="book-info">
-                        <h2>THINKERS COLLECTION</h2>
-                        <h1>Why the World Does Not Exist</h1>
-                        <p>Markus Gabriel</p>
-                        <button class="view-more">View more</button>
-                    </div>
-                    <div class="book-cover">
-                        <img src="{% static 'images/why_world.jpg' %}" class="d-block w-100" alt="Why the World Doesn't Exist Cover">
-                    </div>
-                </div>
-        </div>
-
-        <!-- Carousel Controls -->
-        <a class="carousel-control-prev" href="#SimpleCarouselExample" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#SimpleCarouselExample" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+<!-- Carousel Wrapper -->
+<div id="SimpleCarouselExample" class="carousel slide" data-bs-ride="carousel">
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#SimpleCarouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#SimpleCarouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#SimpleCarouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-      </div>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+  
+<!-- Carousel Inner -->
+<div class="carousel-inner">
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+    <div class="carousel-content">
+        <div class="book-info">
+        <h2>LIGHT COLLECTION</h2>
+        <h1>King Kong Theory</h1>
+        <p>Virginie Despentes</p>
+        <button class="view-more">View more</button>
+        </div>
+        <div class="book-cover">
+        <img src="{% static 'images/KING-KONG-THEORY.jpg' %}" class="d-block w-100" alt="King Kong Theory Cover">
+        </div>
+    </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+    <div class="carousel-content">
+        <div class="book-info">
+        <h2>CURSED POETRY COLLECTION</h2>
+        <h1>The Flowers of Evil</h1>
+        <p>Charles Baudelaire</p>
+        <button class="view-more">View more</button>
+        </div>
+        <div class="book-cover">
+        <img src="{% static 'images/flowers_of_evil.jpg' %}" class="d-block w-100" alt="Flowers of Evil">
+        </div>
+    </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+    <div class="carousel-content">
+        <div class="book-info">
+        <h2>THINKERS COLLECTION</h2>
+        <h1>Why the World Does Not Exist</h1>
+        <p>Markus Gabriel</p>
+        <button class="view-more">View more</button>
+        </div>
+        <div class="book-cover">
+        <img src="{% static 'images/why_world.jpg' %}" class="d-block w-100" alt="Why the World Doesn't Exist Cover">
+        </div>
+    </div>
+    </div>
+</div>
+
+<!-- Controls -->
+<button class="carousel-control-prev" type="button" data-bs-target="#SimpleCarouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#SimpleCarouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>  
 </html>

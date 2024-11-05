@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.exceptions import ValidationError
 from django.urls import reverse
-import datetime
+from django.utils import timezone
 
 # Create your models here.
 class Author(models.Model):
@@ -20,11 +20,6 @@ class Book(models.Model):
     def __str__(self):
         return self.title
 
-class Event(models.Model):
-    summary = models.CharField(max_length=255, default="")
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
-
 class PricingPlan(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
@@ -32,3 +27,14 @@ class PricingPlan(models.Model):
 
     def __str__(self):
         return self.name
+
+class Event(models.Model):
+    title = models.CharField(max_length=200, default='Untitled Event')
+    description = models.TextField(default='No description provided.')
+    date = models.DateField(default=timezone.now)
+    time = models.TimeField(default=timezone.now().time())
+    location = models.CharField(max_length=255, default='Location not specified.')
+    image = models.ImageField(upload_to='event_images/', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
