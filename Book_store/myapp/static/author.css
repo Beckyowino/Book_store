@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.authors {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+title{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #111;
+}
+
+.author-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    background-color: #111;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.filter-btn.active {
+    background-color: #333;
+}
+
+.filter-btn:hover {
+    background-color: #555;
+}
+
+.author-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 40px;
+    padding: 20px;
+
+    justify-content: center;
+}
+
+.author-card {
+    background: transparent;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s;
+
+    flex-basis: calc(33.33% - 40px);
+    margin: 20px;
+}
+
+.author-card:hover {
+    transform: scale(1.05);
+}
+
+.author-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+
+}
+
+.author-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.author-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.view {
+    color: #338ef5;
+    text-decoration: underline;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+  }
+  
+  .view:hover {
+    background-color: #2563eb;
+  }
+
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.newsletter-section {
+    background-color: #111;
+    color: #fff;
+    padding: 50px 20px;
+  }
+  
+.newsletter-content {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.newsletter-content h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+  
+.newsletter-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+  
+.newsletter-form button {
+    background-color: #fff;
+    color: black;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+.newsletter-form button:hover {
+    background-color: #2563eb;
+}

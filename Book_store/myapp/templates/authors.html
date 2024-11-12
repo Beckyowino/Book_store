@@ -12,12 +12,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'author.css' %}">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
     <title>Authors</title>
 </head>
 <body class="authors">
     <header>
         <nav>
+            <div class="container">
             <div class="logo">
                 <img src="{% static 'images/logo.jpg' %}" alt="Website Logo"> 
             </div>
@@ -26,57 +32,170 @@
                 <li class="{% if path == 'authors_url' %}active{% endif %}"><a href="{% url 'authors' %}">Authors</a></li>
                 <li class="{% if path == 'events_url' %}active{% endif %}"><a href="{% url 'events' %}">Events</a></li>
                 <li class="{% if path == 'pricing_url' %}active{% endif %}"><a href="{% url 'pricing' %}">Pricing</a></li>
-
             </ul>
+            </div>
+            <div class="navbar-icons">
+                <a href="#" class="icon"><i class="fas fa-shopping-basket"></i></a>
+                <a href="#" class="icon"><i class="fas fa-user"></i></a>
+            </div>
+
         </nav>
     </header>
 
-    <main>
-        <h1 class="title">Authors</h1>
-        <div class="filter">
-            <button class="active">All</button>
-            <button>XIX</button>
-            <button>XX</button>
-            <button>XXI</button>
+        <div class="author-container">
+            <div class="head">
+            <h1>Authors</h1>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="XIX">XIX</button>
+                <button class="filter-btn" data-filter="XX">XX</button>
+                <button class="filter-btn" data-filter="XXI">XXI</button>
+            </div>
+            </div>
+            
+            <!-- Author Cards -->
+            <div class="author-cards">
+                <div class="author-card" data-era="XIX">
+                    <img src="{% static 'images/author1.jpg' %}" alt="Stefan Zweig">
+                    <h2>Stefan Zweig</h2>
+                    <p>Writer and biographist</p>
+                    <a href="#" class="view">View more</a>
+                </div>
+                <div class="author-card" data-era="XXI">
+                    <img src="{% static 'images/author2.jpg' %}" alt="Virginie Despentes">
+                    <h2>Virginie Despentes</h2>
+                    <p>Writer and director</p>
+                    <a href="#" class="view">View more</a>
+                </div>
+                <!-- Add more cards as needed with appropriate `data-era` attributes -->
+                <div class="author-card" data-era="XXI">
+                    <img src="{% static 'images/author3.jpg' %}" alt="Leo Tolstoy">
+                    <h2>Leo Tolstoy</h2>
+                    <p>Writer</p>
+                    <a href="#" class="view">View more</a>
+                </div>
+                <div class="author-card" data-era="XIX">
+                    <img src="{% static 'images/author4.jpg' %}" alt="Michelle Houellebecq">
+                    <h2>Michelle Houellebecq</h2>
+                    <p>Novelist and poet</p>
+                    <a href="#" class="view">View more</a>
+                </div>
+                <div class="author-card" data-era="XIX">
+                    <img src="{% static 'images/author5.jpg' %}" alt="Virginia Woolf">
+                    <h2>Virginia Woolf</h2>
+                    <p>Writer</p>
+                    <a href="#" class="view">View more</a>
+                </div>
+                <div class="author-card" data-era="XXI">
+                    <img src="{% static 'images/author6.jpg' %}" alt="Kurt Vonnegut">
+                    <h2>Kurt Vonnegut</h2>
+                    <p>Writer</p>
+                    <a href="#" class="view">View more</a>
+                </div>
+                <div class="author-card" data-era="XX">
+                    <img src="{% static 'images/author7.jpg' %}" alt="Markus Gabriel">
+                    <h2>Markus Gabriel</h2>
+                    <p>Philosopher</p>
+                    <a href="#" class="view">View more</a>
+                </div>
+                <div class="author-card" data-era="XX">
+                    <img src="{% static 'images/author8.jpg' %}" alt="Bram Stoker">
+                    <h2>Bram Stoker</h2>
+                    <p>Novelist and writer</p>
+                    <a href="#" class="view">View more</a>
+                </div>
+                <div class="author-card" data-era="XX">
+                    <img src="{% static 'images/author9.jpg' %}" alt="Charles Bukowski">
+                    <h2>Charles Bukowski</h2>
+                    <p>Novelist and poet</p>
+                    <a href="#" class="view">View more</a>
+                </div>
+            </div>
+            <div class="newsletter-section">
+                <div class="newsletter-content">
+                <div class="text">
+                  <h2>&#161;Subscribe to our <br>newsletter!</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Suspendisse nisi sapien, 
+                    hendrerit quis finibus a, <br>rutrum commodo arcu. Curabitur pharetra lacus et venenatis bibendum. 
+                    <br>Nam vel nunc massa.</p></div>
+                  <div class="newsletter-form">
+                    <button type="submit">Subscribe!</button>
+                  </div>
+                </div>
+              </div>
         </div>
-
-        <div class="authors-container">
-            <div class="author-card">
-                <div class="image-container">
-                    <img src="{% static 'stefan.jpg' %}" alt="Stefan Zweig">
-                    <div class="shape"></div>
-                    <div class="arrow"></div>
-                </div>
-                <h3>Stefan Zweig</h3>
-                <p>Writer and biographer</p>
-                <button>View more</button>
+        <footer class="footer">
+            <div class="logo">
+                <img src="{% static 'images/logo.jpg' %}" alt="Website Logo"> 
             </div>
 
-            <div class="author-card">
-                <div class="image-container">
-                    <img src="{% static 'virginie.jpg' %}" alt="Virginie Despentes">
-                    <div class="shape"></div>
-                    <div class="arrow"></div>
-                </div>
-                <h3>Virginie Despentes</h3>
-                <p>Writer and director</p>
-                <button>View more</button>
+            <div class="footer-links">
+                <ul class="footer-section">
+                    <li>Books</li>
+                    <li>Authors</li>
+                    <li>Collections</li>
+                    <li>Events</li>
+                </ul>
+                <ul class="footer-section">
+                    <li>Legal warning</li>
+                    <li>Giveaway terms and conditions</li>
+                    <li>Legal bases of the draws</li>
+                </ul>
+                <ul class="footer-section">
+                    <li>Return policy</li>
+                    <li>Cookies policy</li>
+                    <li>Privacy policy</li>
+                </ul>
             </div>
-
-            <div class="author-card">
-                <div class="image-container">
-                    <img src="{% static 'leo.jpg' %}" alt="Leo Tolstoy">
-                    <div class="shape"></div>
-                    <div class="arrow"></div>
+            <div class="footer-right">
+                <p>Xname. All rights reserved</p>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="icon"><i class="fa fa-instagram"></i></a>
                 </div>
-                <h3>Leo Tolstoy</h3>
-                <p>Writer</p>
-                <button>View more</button>
             </div>
-        </div>
-    </main>
+        </footer>
+        
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Get all filter buttons
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    // Get all author cards
+    const authorCards = document.querySelectorAll('.author-card');
 
-    <script src="{% static 'script.js' %}"></script>
+    // Add click event listener to each filter button
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Get the filter value (data-filter attribute)
+            const filterValue = this.getAttribute('data-filter');
+
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to the clicked button
+            this.classList.add('active');
+
+            // Filter author cards
+            authorCards.forEach(card => {
+                // Get the data-era attribute of the card
+                const era = card.getAttribute('data-era');
+
+                // Show or hide the card based on the filter value
+                if (filterValue === 'all' || era === filterValue) {
+                    card.style.display = 'block'; // Show the card
+                } else {
+                    card.style.display = 'none'; // Hide the card
+                }
+            });
+        });
+    });
+});
+
+</script>
+
 </body>
 </html>
 {% endwith %}
