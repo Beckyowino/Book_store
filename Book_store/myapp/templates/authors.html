@@ -3,6 +3,15 @@
 {% url 'authors' as authors_url %}
 {% url 'events' as events_url %}
 {% url 'pricing' as pricing_url %}
+{% url 'stefan' as stefan_url %}
+{% url 'virginie' as virginie_url %}
+{% url 'leo' as leo_url %}
+{% url 'virginia' as virginia_url %}
+{% url 'kurt' as kurt_url %}
+{% url 'markus' as markus_url %}
+{% url 'bram' as bram_url %}
+{% url 'charles' as charles_url %}
+{% url 'michelle' as michelle_url %}
 
 {% block content %}
 {% with request.path as path %}
@@ -61,18 +70,24 @@
                     <img src="{% static 'images/author1.jpg' %}" alt="Stefan Zweig">
                     <h2>Stefan Zweig</h2>
                     <p>Writer and biographist</p>
-                   <!-- <a href="#" class="view"  data-author="Stefan Zweig">View more</a>  -->
-                    <a href="#" class="view" data-author="Stefan Zweig" data-image="{% static 'images/author1.jpg' %}" data-description="Writer and biographist
-                    Proin bibendum risus eu orci commodo auctor. Nulla tristique mollis nulla. Nam aliquam lacus quis finibus condimentum. Praesent non elementum libero, eget suscipit tortor. In molestie massa dui, vel euismod massa condimentum vitae. Ut nec ante nec nibh fermentum porta vel vel risus.
+                    <a href="{% url 'stefan' %}" class="view" data-author="Stefan Zweig" data-image="{% static 'images/author1.jpg' %}" data-description="Writer and biographist
+                    Proin bibendum risus eu orci commodo auctor. Nulla tristique mollis nulla. 
+                    Nam aliquam lacus quis finibus condimentum. Praesent non elementum libero, 
+                    eget suscipit tortor. In molestie massa dui, vel euismod massa condimentum vitae. 
+                    Ut nec ante nec nibh fermentum porta vel vel risus.
                     Cras laoreet dui purus, a aliquet odio porta sed. 
-                    Suspendisse eu neque auctor magna luctus fringilla vel eget elit. Donec porttitor turpis ex, vel pretium arcu fermentum id. Duis ac viverra nisi, non porttitor odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                    Mauris posuere ligula at sapien fermentum tincidunt. Fusce sodales nunc mi, nec fermentum metus consectetur at. Donec maximus diam est, vel vulputate nisl consectetur at. Sed lobortis mi malesuada augue dapibus gravida. Vivamus ullamcorper ex mauris, et gravida magna molestie nec.">View more</a>
+                    Suspendisse eu neque auctor magna luctus fringilla vel eget elit. 
+                    Donec porttitor turpis ex, vel pretium arcu fermentum id. Duis ac viverra nisi, 
+                    non porttitor odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    Mauris posuere ligula at sapien fermentum tincidunt. Fusce sodales nunc mi, 
+                    nec fermentum metus consectetur at. Donec maximus diam est, vel vulputate nisl consectetur at. 
+                    Sed lobortis mi malesuada augue dapibus gravida. Vivamus ullamcorper ex mauris, et gravida magna molestie nec.">View more</a>
                 </div>
                 <div class="author-card" data-era="XXI">
                     <img src="{% static 'images/author2.jpg' %}" alt="Virginie Despentes">
                     <h2>Virginie Despentes</h2>
                     <p>Writer and director</p>
-                    <a href="#" class="view"  data-author="Virginie Despentes" data-image="{% static 'images/author2.jpg' %}" data-description="Writer and director
+                    <a href="{% url 'virginie' %}" class="view"  data-author="Virginie Despentes" data-image="{% static 'images/author2.jpg' %}" data-description="Writer and director
                     Proin bibendum risus eu orci commodo auctor. Nulla tristique mollis nulla. 
                     Nam aliquam lacus quis finibus condimentum. Praesent non elementum libero, eget suscipit tortor. In molestie massa dui, vel euismod massa condimentum vitae. Ut nec ante nec nibh fermentum porta vel vel risus. Cras laoreet dui purus, a aliquet odio porta sed. 
                     Suspendisse eu neque auctor magna luctus fringilla vel eget elit. Donec porttitor turpis ex, vel pretium arcu fermentum id. 
@@ -85,11 +100,15 @@
                     <img src="{% static 'images/author3.jpg' %}" alt="Leo Tolstoy">
                     <h2>Leo Tolstoy</h2>
                     <p>Writer</p>
-                    <a href="#" class="view" data-author="Leo Tolstoy" data-image="{% static 'images/author3.jpg' %}" data-description="Writer
-                    Proin bibendum risus eu orci commodo auctor. Nulla tristique mollis nulla. Nam aliquam lacus quis finibus condimentum. Praesent non elementum libero, eget suscipit tortor. 
-                    In molestie massa dui, vel euismod massa condimentum vitae. Ut nec ante nec nibh fermentum porta vel vel risus. Cras laoreet dui purus, a aliquet odio porta sed. Suspendisse eu neque auctor magna luctus fringilla vel eget elit. 
-                    Donec porttitor turpis ex, vel pretium arcu fermentum id. Duis ac viverra nisi, non porttitor odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                    Mauris posuere ligula at sapien fermentum tincidunt. Fusce sodales nunc mi, nec fermentum metus consectetur at. Donec maximus diam est, vel vulputate nisl consectetur at. Sed lobortis mi malesuada augue dapibus gravida.
+                    <a href="{% url 'leo' %}" class="view" data-author="Leo Tolstoy" data-image="{% static 'images/author3.jpg' %}" data-description="Writer
+                    Proin bibendum risus eu orci commodo auctor. Nulla tristique mollis nulla. Nam aliquam lacus quis finibus condimentum. 
+                    Praesent non elementum libero, eget suscipit tortor. 
+                    In molestie massa dui, vel euismod massa condimentum vitae. Ut nec ante nec nibh fermentum porta vel vel risus. 
+                    Cras laoreet dui purus, a aliquet odio porta sed. Suspendisse eu neque auctor magna luctus fringilla vel eget elit. 
+                    Donec porttitor turpis ex, vel pretium arcu fermentum id. Duis ac viverra nisi, non porttitor odio. 
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    Mauris posuere ligula at sapien fermentum tincidunt. Fusce sodales nunc mi, nec fermentum metus consectetur at. 
+                    Donec maximus diam est, vel vulputate nisl consectetur at. Sed lobortis mi malesuada augue dapibus gravida.
                     Vivamus ullamcorper ex mauris, et gravida magna molestie nec.
                     ">View more</a>
                 </div>
@@ -97,86 +116,101 @@
                     <img src="{% static 'images/author4.jpg' %}" alt="Michelle Houellebecq">
                     <h2>Michelle Houellebecq</h2>
                     <p>Novelist and poet</p>
-                    <a href="#" class="view" data-author="Michelle Houellebecq" data-image="{% static 'images/author4.jpg' %}" data-description="Novelist and poet
+                    <a href="{% url 'michelle' %}" class="view" data-author="Michelle Houellebecq" data-image="{% static 'images/author4.jpg' %}" data-description="Novelist and poet
                     Proin bibendum risus eu orci commodo auctor. Nulla tristique mollis nulla. Nam aliquam lacus quis finibus condimentum. 
-                    Praesent non elementum libero, eget suscipit tortor. In molestie massa dui, vel euismod massa condimentum vitae. Ut nec ante nec nibh fermentum porta vel vel risus. 
-                    Cras laoreet dui purus, a aliquet odio porta sed. Suspendisse eu neque auctor magna luctus fringilla vel eget elit. Donec porttitor turpis ex, vel pretium arcu fermentum id. Duis ac viverra nisi, non porttitor odio. 
+                    Praesent non elementum libero, eget suscipit tortor. In molestie massa dui, vel euismod massa condimentum vitae. 
+                    Ut nec ante nec nibh fermentum porta vel vel risus. 
+                    Cras laoreet dui purus, a aliquet odio porta sed. Suspendisse eu neque auctor magna luctus fringilla vel eget elit. 
+                    Donec porttitor turpis ex, vel pretium arcu fermentum id. Duis ac viverra nisi, non porttitor odio. 
                     Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                    Mauris posuere ligula at sapien fermentum tincidunt. Fusce sodales nunc mi, nec fermentum metus consectetur at. Donec maximus diam est, vel vulputate nisl consectetur at. Sed lobortis mi malesuada augue dapibus gravida. Vivamus ullamcorper ex mauris, et gravida magna molestie nec.
+                    Mauris posuere ligula at sapien fermentum tincidunt. Fusce sodales nunc mi, 
+                    nec fermentum metus consectetur at. Donec maximus diam est, vel vulputate nisl consectetur at. 
+                    Sed lobortis mi malesuada augue dapibus gravida. Vivamus ullamcorper ex mauris, et gravida magna molestie nec.
                     ">View more</a>
                 </div>
                 <div class="author-card" data-era="XIX">
                     <img src="{% static 'images/author5.jpg' %}" alt="Virginia Woolf">
                     <h2>Virginia Woolf</h2>
                     <p>Writer</p>
-                    <a href="#" class="view" data-author="Virginia Woolf" data-image="{% static 'images/author5.jpg' %}" data-description="Writer
+                    <a href="{% url 'virginia' %}" class="view" data-author="Virginia Woolf" data-image="{% static 'images/author5.jpg' %}" data-description="Writer
                     Proin bibendum risus eu orci commodo auctor. Nulla tristique mollis nulla. Nam aliquam lacus quis finibus condimentum. 
-                    Praesent non elementum libero, eget suscipit tortor. In molestie massa dui, vel euismod massa condimentum vitae. Ut nec ante nec nibh fermentum porta vel vel risus. Cras laoreet dui purus, a aliquet odio porta sed. Suspendisse eu neque auctor magna luctus fringilla vel eget elit. 
-                    Donec porttitor turpis ex, vel pretium arcu fermentum id. Duis ac viverra nisi, non porttitor odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                    Mauris posuere ligula at sapien fermentum tincidunt. Fusce sodales nunc mi, nec fermentum metus consectetur at. Donec maximus diam est, vel vulputate nisl consectetur at. Sed lobortis mi malesuada augue dapibus gravida. Vivamus ullamcorper ex mauris, et gravida magna molestie nec.
+                    Praesent non elementum libero, eget suscipit tortor. In molestie massa dui, vel euismod massa condimentum vitae. 
+                    Ut nec ante nec nibh fermentum porta vel vel risus. Cras laoreet dui purus, a aliquet odio porta sed. 
+                    Suspendisse eu neque auctor magna luctus fringilla vel eget elit. 
+                    Donec porttitor turpis ex, vel pretium arcu fermentum id. Duis ac viverra nisi, non porttitor odio. 
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    Mauris posuere ligula at sapien fermentum tincidunt. Fusce sodales nunc mi, 
+                    nec fermentum metus consectetur at. Donec maximus diam est, vel vulputate nisl consectetur at. 
+                    Sed lobortis mi malesuada augue dapibus gravida. Vivamus ullamcorper ex mauris, et gravida magna molestie nec.
                     ">View more</a>
                 </div>
                 <div class="author-card" data-era="XXI">
                     <img src="{% static 'images/author6.jpg' %}" alt="Kurt Vonnegut">
                     <h2>Kurt Vonnegut</h2>
                     <p>Writer</p>
-                    <a href="#" class="view" data-author="Kurt Vonnegut" data-image="{% static 'images/author6.jpg' %}" data-description="Writer
+                    <a href="{% url 'kurt' %}" class="view" data-author="Kurt Vonnegut" data-image="{% static 'images/author6.jpg' %}" data-description="Writer
                     Proin bibendum risus eu orci commodo auctor. Nulla tristique mollis nulla. Nam aliquam lacus quis finibus condimentum. 
-                    Praesent non elementum libero, eget suscipit tortor. In molestie massa dui, vel euismod massa condimentum vitae. Ut nec ante nec nibh fermentum porta vel vel risus. Cras laoreet dui purus, a aliquet odio porta sed. Suspendisse eu neque auctor magna luctus fringilla vel eget elit. Donec porttitor turpis ex, 
+                    Praesent non elementum libero, eget suscipit tortor. In molestie massa dui, vel euismod massa condimentum vitae. 
+                    Ut nec ante nec nibh fermentum porta vel vel risus. Cras laoreet dui purus, a aliquet odio porta sed. 
+                    Suspendisse eu neque auctor magna luctus fringilla vel eget elit. Donec porttitor turpis ex, 
                     vel pretium arcu fermentum id. Duis ac viverra nisi, non porttitor odio. 
                     Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.                   
-                    Mauris posuere ligula at sapien fermentum tincidunt. Fusce sodales nunc mi, nec fermentum metus consectetur at. Donec maximus diam est, vel vulputate nisl consectetur at. Sed lobortis mi malesuada augue dapibus gravida. Vivamus ullamcorper ex mauris, et gravida magna molestie nec.
+                    Mauris posuere ligula at sapien fermentum tincidunt. Fusce sodales nunc mi, 
+                    nec fermentum metus consectetur at. Donec maximus diam est, vel vulputate nisl consectetur at. 
+                    Sed lobortis mi malesuada augue dapibus gravida. Vivamus ullamcorper ex mauris, et gravida magna molestie nec.
                     ">View more</a>
                 </div>
                 <div class="author-card" data-era="XX">
                     <img src="{% static 'images/author7.jpg' %}" alt="Markus Gabriel">
                     <h2>Markus Gabriel</h2>
                     <p>Philosopher</p>
-                    <a href="#" class="view" data-author="Markus Gabriel" data-image="{% static 'images/author7.jpg' %}" data-description="Philosopher
+                    <a href="{% url 'markus' %}" class="view" data-author="Markus Gabriel" data-image="{% static 'images/author7.jpg' %}" data-description="Philosopher
                     Proin bibendum risus eu orci commodo auctor. Nulla tristique mollis nulla. Nam aliquam lacus quis finibus condimentum. 
-                    Praesent non elementum libero, eget suscipit tortor. In molestie massa dui, vel euismod massa condimentum vitae. Ut nec ante nec nibh fermentum porta vel vel risus. Cras laoreet dui purus, a aliquet odio porta sed. Suspendisse eu neque auctor magna luctus fringilla vel eget elit. 
+                    Praesent non elementum libero, eget suscipit tortor. In molestie massa dui, vel euismod massa condimentum vitae. 
+                    Ut nec ante nec nibh fermentum porta vel vel risus. Cras laoreet dui purus, a aliquet odio porta sed. 
+                    Suspendisse eu neque auctor magna luctus fringilla vel eget elit. 
                     Donec porttitor turpis ex, vel pretium arcu fermentum id. Duis ac viverra nisi, non porttitor odio. 
                     Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                    Mauris posuere ligula at sapien fermentum tincidunt. Fusce sodales nunc mi, nec fermentum metus consectetur at. Donec maximus diam est, vel vulputate nisl consectetur at. Sed lobortis mi malesuada augue dapibus gravida. Vivamus ullamcorper ex mauris, et gravida magna molestie nec.
+                    Mauris posuere ligula at sapien fermentum tincidunt. Fusce sodales nunc mi, nec fermentum metus consectetur at.
+                    Donec maximus diam est, vel vulputate nisl consectetur at. Sed lobortis mi malesuada augue dapibus gravida. 
+                    Vivamus ullamcorper ex mauris, et gravida magna molestie nec.
                     ">View more</a>
                 </div>
                 <div class="author-card" data-era="XX">
                     <img src="{% static 'images/author8.jpg' %}" alt="Bram Stoker">
                     <h2>Bram Stoker</h2>
                     <p>Novelist and writer</p>
-                    <a href="#" class="view" data-author="Bram Stoker" data-image="{% static 'images/author8.jpg' %}" data-description="Novelist and writer
-                    Proin bibendum risus eu orci commodo auctor. Nulla tristique mollis nulla. Nam aliquam lacus quis finibus condimentum. Praesent non elementum libero, eget suscipit tortor. In molestie massa dui, vel euismod massa condimentum vitae. Ut nec ante nec nibh fermentum porta vel vel risus. Cras laoreet dui purus, a aliquet odio porta sed. Suspendisse eu neque auctor magna luctus fringilla vel eget elit. Donec porttitor turpis ex, vel pretium arcu fermentum id. Duis ac viverra nisi, non porttitor odio. Class aptent taciti sociosqu 
+                    <a href="{% url 'bram' %}" class="view" data-author="Bram Stoker" data-image="{% static 'images/author8.jpg' %}" data-description="Novelist and writer
+                    Proin bibendum risus eu orci commodo auctor. Nulla tristique mollis nulla. 
+                    Nam aliquam lacus quis finibus condimentum. Praesent non elementum libero, eget suscipit tortor. 
+                    In molestie massa dui, vel euismod massa condimentum vitae. Ut nec ante nec 
+                    nibh fermentum porta vel vel risus. Cras laoreet dui purus, a aliquet odio porta sed. 
+                    Suspendisse eu neque auctor magna luctus fringilla vel eget elit. Donec porttitor turpis ex, 
+                    vel pretium arcu fermentum id. Duis ac viverra nisi, non porttitor odio. Class aptent taciti sociosqu 
                     ad litora torquent per conubia nostra, per inceptos himenaeos.
-                    Mauris posuere ligula at sapien fermentum tincidunt. Fusce sodales nunc mi, nec fermentum metus consectetur at. Donec maximus diam est, vel vulputate nisl consectetur at. Sed lobortis mi malesuada augue dapibus gravida. Vivamus ullamcorper ex mauris, et gravida magna molestie nec.
+                    Mauris posuere ligula at sapien fermentum tincidunt. Fusce sodales nunc mi, 
+                    nec fermentum metus consectetur at. Donec maximus diam est, vel vulputate nisl consectetur at. 
+                    Sed lobortis mi malesuada augue dapibus gravida. Vivamus ullamcorper ex mauris, et gravida magna molestie nec.
                     ">View more</a>
                 </div>
                 <div class="author-card" data-era="XX">
                     <img src="{% static 'images/author9.jpg' %}" alt="Charles Bukowski">
                     <h2>Charles Bukowski</h2>
                     <p>Novelist and poet</p>
-                    <a href="#" class="view" data-author="Charles Bukowski" data-image="{% static 'images/author9.jpg' %}" data-description="Novelist and writer
-                    Proin bibendum risus eu orci commodo auctor. Nulla tristique mollis nulla. Nam aliquam lacus quis finibus condimentum. Praesent non elementum libero, eget suscipit tortor. 
-                    In molestie massa dui, vel euismod massa condimentum vitae. Ut nec ante nec nibh fermentum porta vel vel risus. Cras laoreet dui purus, a aliquet odio porta sed. Suspendisse eu neque auctor magna luctus fringilla vel eget elit. Donec porttitor turpis ex, vel pretium arcu fermentum id. Duis ac viverra nisi, non porttitor odio. 
+                    <a href="{% url 'charles' %}" class="view" data-author="Charles Bukowski" data-image="{% static 'images/author9.jpg' %}" data-description="Novelist and writer
+                    Proin bibendum risus eu orci commodo auctor. Nulla tristique mollis nulla. 
+                    Nam aliquam lacus quis finibus condimentum. Praesent non elementum libero, eget suscipit tortor. 
+                    In molestie massa dui, vel euismod massa condimentum vitae. Ut nec ante nec nibh fermentum porta vel vel risus. 
+                    Cras laoreet dui purus, a aliquet odio porta sed. Suspendisse eu neque auctor magna luctus fringilla vel eget elit. 
+                    Donec porttitor turpis ex, vel pretium arcu fermentum id. Duis ac viverra nisi, non porttitor odio. 
                     Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                    Mauris posuere ligula at sapien fermentum tincidunt. Fusce sodales nunc mi, nec fermentum metus consectetur at. Donec maximus diam est, vel vulputate nisl consectetur at. Sed lobortis mi malesuada augue dapibus gravida. Vivamus ullamcorper ex mauris, et gravida magna molestie nec.
+                    Mauris posuere ligula at sapien fermentum tincidunt. Fusce sodales nunc mi, nec fermentum metus consectetur at. 
+                    Donec maximus diam est, vel vulputate nisl consectetur at. Sed lobortis mi malesuada augue dapibus gravida. 
+                    Vivamus ullamcorper ex mauris, et gravida magna molestie nec.
                     ">View more</a>
                 </div>
             </div>
-
-            <div id="authorModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <div class="modal-image">
-                        <img id="modalAuthorImage" src="" alt="Author Image">
-                    </div>
-                    <div class="modal-details">
-                        <h2 id="modalAuthorName"></h2>
-                        <p id="modalAuthorRole"></p>
-                        <p id="modalAuthorDescription"></p>
-                    </div>
-                </div>
-            </div>
-
+              
             <div class="newsletter-section">
                 <div class="newsletter-content">
                 <div class="text">
@@ -257,47 +291,9 @@
         });
     });
 
-    const modal = document.getElementById('authorModal');
-    const modalCloseBtn = document.querySelector('.modal .close');
-    const modalAuthorName = document.getElementById('modalAuthorName');
-    const modalAuthorImage = document.getElementById('modalAuthorImage');
-    const modalAuthorDescription = document.getElementById('modalAuthorDescription');
-
-    // Set up event listeners for each "View more" link
-    document.querySelectorAll('.view').forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-
-            // Get the data attributes from the clicked link
-            const authorName = this.getAttribute('data-author');
-            const authorImage = this.getAttribute('data-image');
-            const authorDescription = this.getAttribute('data-description');
-
-            // Update the modal content
-            modalAuthorName.innerText = authorName;
-            modalAuthorImage.src = authorImage;  // Dynamically set image source
-            modalAuthorDescription.innerText = authorDescription;
-
-            // Display the modal
-            modal.style.display = 'block';
-        });
-    });
-
-    // Close modal when 'X' is clicked
-    modalCloseBtn.onclick = function() {
-        modal.style.display = 'none';
-    }
-
-    // Close modal when clicking outside the modal content
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-    }
 });
 
 </script>
-
 </body>
 </html>
 {% endwith %}

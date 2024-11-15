@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp.views import events, books, authors, pricing 
+from myapp.views import events, books, authors, pricing, stefan, virginie, bram, charles, kurt, markus, michelle, virginia, leo
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,6 +25,14 @@ urlpatterns = [
     path('authors/', authors, name='authors'),
     path('pricing/', pricing, name='pricing'),
     path('books/', books, name='books'),
-
+    path('authors/stefan', stefan, name='stefan' ),
+    path('authors/virginie', virginie, name='virginie' ),
+    path('authors/leo', leo, name='leo' ),
+    path('authors/bram', bram, name='bram' ),
+    path('authors/charles', charles, name='charles' ),
+    path('authors/kurt', kurt, name='kurt' ),
+    path('authors/markus', markus, name='markus' ),
+    path('authors/michelle', michelle, name='michelle' ),
+    path('authors/virginia', virginia, name='virginia' ),
 ]
 

@@ -1,0 +1,153 @@
+{% load static %}
+{% url 'books' as books_url %}
+{% url 'authors' as authors_url %}
+{% url 'events' as events_url %}
+{% url 'pricing' as pricing_url %}
+
+{% block content %}
+{% with request.path as path %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'author.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>Authors</title>
+</head>
+<body class="authors">
+    <header>
+        <nav>
+            <div class="container">
+            <div class="logo">
+                <img src="{% static 'images/logo.jpg' %}" alt="Website Logo"> 
+            </div>
+            <ul>
+                <li class="{% if path == 'books_url' %}active{% endif %}"><a href="{% url 'books' %}">Books</a></li>
+                <li class="{% if path == 'authors_url' %}active{% endif %}"><a href="{% url 'authors' %}">Authors</a></li>
+                <li class="{% if path == 'events_url' %}active{% endif %}"><a href="{% url 'events' %}">Events</a></li>
+                <li class="{% if path == 'pricing_url' %}active{% endif %}"><a href="{% url 'pricing' %}">Pricing</a></li>
+            </ul>
+            </div>
+            <div class="navbar-icons">
+                <a href="#" class="icon"><i class="fas fa-shopping-basket"></i></a>
+                <a href="#" class="icon"><i class="fas fa-user"></i></a>
+            </div>
+
+        </nav>
+    </header>
+
+    <div class="author-info">
+        <div class="author-photo">
+            <img src="{% static 'images/author1.jpg' %}" alt="Stefan Zweig">
+        </div>
+        <div class="author-details">
+            <div>
+                <h2>Stefan Zweig</h2>
+                <h3>Writer and Biographer</h3>
+                <p>
+                    The author of the article should drink the smile of the doctor. <br>
+                    No sad no soft. In fact, there are some lakes that limit the story. <br>
+                    It's not a free element, it needs a macro. In the employee massa dui, <br>
+                    or the euismod massa sauce of life. So that neither before nor before the <br>
+                    gate leaven or laughter. Tomorrow laoreet dui purus, a aquet hate porta sed. <br>
+                    Neither the author nor the author of the great mourning fringilla nor the elit. <br>
+                    Until the airline's high school from, or the price of the bow. If you don't hate <br>
+                    the house and cartoon, don't hate it. The class is suitable for the silent partners<br>
+                    who turn to the shores through our marriages, through the Hymenaean projects.<br><br>
+                    Mauris put the ligula at sapien ferment tincidunt. My friends are now at peace, <br>
+                    and fear will not follow. Until it is the biggest diam, or the vulputate players <br>
+                    will be pursued. But the pill I expected was pregnant with protein. <br>
+                    We live in the womb from the mauris, and we are not pregnant.
+    
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Recommended Books Section -->
+    <div class="recommended-books">
+        <h2>Recommended books</h2>
+        <div class="book-list">
+            <!-- Example book card -->
+            <div class="book-card">
+                <img src="{% static 'images/book1.jpg' %}" alt="King Kong Theory">
+                <div class="book-title">King Kong Theory</div>
+                <div class="book-author">Virginie Despentes</div>
+                <div class="book-credits">3 credits</div>
+            </div>
+            <div class="book-card">
+                <img src="{% static 'images/book2.jpg' %}" alt="Slaughterhouse-Five">
+                <div class="book-title">Slaughterhouse-Five</div>
+                <div class="book-author">Kurt Vonnegut</div>
+                <div class="book-credits">3 credits</div>
+            </div>
+            <div class="book-card">
+                <img src="{% static 'images/book3.jpg' %}" alt="Family Happiness">
+                <div class="book-title">Family Happiness</div>
+                <div class="book-author">Leo Tolstoy</div>
+                <div class="book-credits">2 credits</div>
+            </div>
+            <div class="book-card">
+                <img src="{% static 'images/book1.jpg' %}" alt="A Chess Story">
+                <div class="book-title">A Chess Story</div>
+                <div class="book-author">Stefan Zweig</div>
+                <div class="book-credits">2 credits</div>
+            </div>
+        </div>
+    </div>
+    <div class="newsletter-section">
+        <div class="newsletter-content">
+        <div class="text">
+          <h2>&#161;Subscribe to our <br>newsletter!</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Suspendisse nisi sapien, 
+            hendrerit quis finibus a, <br>rutrum commodo arcu. Curabitur pharetra lacus et venenatis bibendum. 
+            <br>Nam vel nunc massa.</p></div>
+          <div class="newsletter-form">
+            <button type="submit">Subscribe!</button>
+          </div>
+        </div>
+      </div>
+            
+<footer class="footer">
+    <div class="logo">
+        <img src="{% static 'images/logo.jpg' %}" alt="Website Logo"> 
+    </div>
+
+    <div class="footer-links">
+        <ul class="footer-section">
+            <li>Books</li>
+            <li>Authors</li>
+            <li>Collections</li>
+            <li>Events</li>
+        </ul>
+        <ul class="footer-section">
+            <li>Legal warning</li>
+            <li>Giveaway terms and conditions</li>
+            <li>Legal bases of the draws</li>
+        </ul>
+        <ul class="footer-section">
+            <li>Return policy</li>
+            <li>Cookies policy</li>
+            <li>Privacy policy</li>
+        </ul>
+    </div>
+    <div class="footer-right">
+        <p>Xname. All rights reserved</p>
+        <div class="social-icons">
+            <a href="#" class="icon"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="icon"><i class="fa fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
+{% endwith %}
+{% endblock %}
