@@ -1,5 +1,6 @@
 # Ignore the virtual environment directory
 venv/
+
 # Ignore the pycache directory
 __pycache__/
 
@@ -19,7 +20,9 @@ db.sqlite3
 .DS_Store
 
 # Ignore the Thumbs.db file (if you're on Windows)
+
 Thumbs.db
+
 .pycache
 .log 
 .csv
