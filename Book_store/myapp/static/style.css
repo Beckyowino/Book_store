@@ -405,3 +405,31 @@ button {
     box-sizing: border-box;
 }
 
+#calendar {
+    color: #0f0f0f;
+    background-color: #53a4fc;
+    margin: 20px;
+}
+
+.fc-tooltip {
+    position: absolute;
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    font-size: 14px;
+    max-width: 200px;
+}
+
+.fc-tooltip .tooltip-content h3 {
+    margin: 0 0 5px;
+    font-size: 16px;
+    color: #000;
+}
+
+.fc-tooltip .tooltip-content p {
+    margin: 2px 0;
+    font-size: 14px;
+}

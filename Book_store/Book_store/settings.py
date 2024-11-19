@@ -65,7 +65,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'Book_store.context_processors.get_current_path'#i added this to test my templates
+                'myapp.context_processors.example_context_processor',  # Correct path here
+
             ],
         },
     },

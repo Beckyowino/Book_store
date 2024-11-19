@@ -29,12 +29,10 @@ class PricingPlan(models.Model):
         return self.name
 
 class Event(models.Model):
-    title = models.CharField(max_length=200, default='Untitled Event')
-    description = models.TextField(default='No description provided.')
-    date = models.DateField(default=timezone.now)
-    time = models.TimeField(default=timezone.now().time())
-    location = models.CharField(max_length=255, default='Location not specified.')
-    image = models.ImageField(upload_to='event_images/', blank=True, null=True)
+    title = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+    start_time = models.DateTimeField(null=True)
+    end_time = models.DateTimeField(null=True)
 
     def __str__(self):
         return self.title
