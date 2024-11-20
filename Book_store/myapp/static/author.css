@@ -113,6 +113,7 @@ title{
     background-color: #111;
     color: #fff;
     padding: 50px 20px;
+    margin: 0 40px;
 }
   
 .newsletter-content {
@@ -147,18 +148,20 @@ title{
 .author-info { 
     display: flex; 
     align-items: center; 
-    padding: 50px; 
+    padding: 50px 160px; 
     background-color: #fff; 
 }
 
 .author-photo { 
     flex: 1; 
     max-width: 300px; 
+    filter: grayscale(100%) hue-rotate(180deg);
 }
 
 .author-photo img { 
     width: 100%; 
     border-radius: 8px; 
+    filter: grayscale(100%) hue-rotate(180deg);
 }
 
 .author-details { 
@@ -174,13 +177,11 @@ title{
     font-size: 2em; 
     margin: 0; 
     align-self: flex-end;
-
 }
 
 .author-details h3 { 
     font-weight: normal; 
     color: #555; 
-
 }
 
 /* Recommended books section */

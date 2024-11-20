@@ -6,6 +6,7 @@ nav {
     position: static !important;
     justify-content: space-between !important;
 }
+
 .logo img {
     width: 40px !important; 
     height: auto !important; 
@@ -13,10 +14,12 @@ nav {
     object-fit: cover !important;
     transform: translateY(5px) !important;
 }
+
 .container{
     display: flex !important; 
     align-items: center !important;
 }
+
 ul {
     list-style: none; 
     display: flex !important;
@@ -39,9 +42,9 @@ a:hover {
 .book-cover img {
     flex: 0 0 150px !important; 
     margin: 0 20px;
-    height: auto;
+    height: 400px;
     object-fit: contain;
-    max-width: 300px;
+    width: 300px;
 }
 
 .book-info {
@@ -75,26 +78,6 @@ body {
     height: 100vh;
     font-family: sans-serif;
     background-color: #f0f0f0;
-
-}
-
-/* General Carousel Styles */
-.carousel {
-    width: 100% !important;
-    max-width: none !important;
-}
-
-/* Slide Animation */
-.carousel-slide {
-    position: absolute !important;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    height: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    opacity: 0;
 }
 
 /* Carousel Item Styling */
@@ -105,10 +88,10 @@ body {
     width: 100%;
     padding: 0; 
     background-color: rgba(0, 0, 0, 0.7);
-    height: 100vh;
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
+    margin-bottom: 5px;
 }
 
 /* Control Buttons Styling */
@@ -119,13 +102,6 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
-}
-
-.carousel-controls div {
-    background-color: white;
-    color: #000;
-    border: none;
-    cursor: pointer;
 }
 
 /* View More Button */
@@ -147,27 +123,8 @@ body {
     display: flex;
     align-items: center;
     background-color: #8e5cf3; 
-    padding: 40px;
-}
-
-/* Indicators Styling */
-.carousel-indicators {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.carousel-indicators button {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #000;
-    border: none;
-    opacity: 0.5;
-}
-
-.carousel-indicators .active {
-    opacity: 1;
+    padding: 40px 160px;
+    height: 600px;
 }
 
 /* Control Icons */
@@ -177,9 +134,21 @@ body {
     border-radius: 50%;
     width: 40px;
     height: 40px;
+    position: absolute;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.carousel-control-prev {
+    left: 10px; /* Adjust distance from the left edge*/
+}
 
+.carousel-control-next {
+    right: 10px; /* Adjust distance from the right edge */
+}
+    
 h2 {
     margin: 10px 0 5px;
 }
@@ -197,9 +166,11 @@ button {
     cursor: pointer;
     justify-content: flex-end;
 }
+
 .button-container {
     margin-top: auto; /* Pushes the button to the bottom of the card */
 }
+
 .header-container {
     display: flex; /* Use flexbox for layout */
     justify-content: space-between; /* Space between items */
@@ -234,7 +205,6 @@ button {
 
 .toggle-option.active {
     font-weight: bold; /* Bold text for active option */
-
 }
 
 #toggle-slider {
@@ -270,9 +240,11 @@ button {
     height: 300px; 
     display: flex; 
 }
+
 .card:last-child {
     border-right: none; /* Remove the bottom border from the last card */
 }
+
 .card .price {
     font-size: 24px;
     font-weight: bold;
@@ -286,26 +258,30 @@ button {
     position: relative;
     text-align: center;
     color: white;
-  }
+}
+
 .centered {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }  
+}  
+
 .full-width-image {
     width: 100%; /* Make the image take the full width of the container */
     height: 300px; /* Maintain the aspect ratio */
     display: block; /* Remove any bottom space caused by inline images */
 }
+
 .acme{
     text-decoration: overline;
 }
+
 .quiz{
     text-align: center;
     font-size: 20px;
-
 }
+
 .accordion {
     background-color: #eee;
     color: #444;
@@ -314,23 +290,22 @@ button {
     width: 100%;
     text-align: left;
     transition: 0.4s;
-
-  }
+}
   
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  .accordion:hover {
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.accordion:hover {
     background-color: #ccc;
-  }
+}
   
-  /* Style the accordion panel. Note: hidden by default */
-  .panel {
+/* Style the accordion panel. Note: hidden by default */
+.panel {
     padding: 0 18px;
     background-color: white;
     display: none;
     overflow: hidden;
+}
 
-  }
-  .footer {
+.footer {
     width: 100%;
     padding: 20px 40px;
     margin-top: 40px;
@@ -370,7 +345,6 @@ button {
     list-style: none;
     color: #666;
     flex-direction: column;
-
 }
 
 .footer-section li {
