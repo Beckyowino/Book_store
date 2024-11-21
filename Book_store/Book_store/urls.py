@@ -21,6 +21,7 @@ from myapp.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', books, name='books'),
+    path('king/', king, name='king'),
     path('events/', events, name='events'),
     path('events/json/', event_json, name='event_json'),
     path('events/create_event/', create_event, name='create_event'),
