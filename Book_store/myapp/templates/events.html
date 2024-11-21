@@ -143,12 +143,11 @@
             if (info.event.extendedProps.description) {
                 info.el.setAttribute('title', info.event.extendedProps.description);
             }
-        },
+            },
         });
 
         calendar.render();
-
-    // Form submission to add a new event
+        // Form submission to add a new event
         document.getElementById('event-form').addEventListener('submit', function (e) {
         e.preventDefault();
 

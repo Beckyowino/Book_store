@@ -10,6 +10,9 @@ import json
 def books(request):
     return render(request, 'books.html')
 
+def king(request):
+    return render(request, 'king.html')
+
 def pricing(request):
     return render(request, 'pricing.html')
 

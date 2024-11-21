@@ -2,6 +2,8 @@
 {% url 'authors' as authors_url %}
 {% url 'events' as events_url %}
 {% url 'pricing' as pricing_url %}
+{% url 'king' as king_url %}
+
 {% load static %}
 
 {% block content%}
@@ -54,40 +56,40 @@
     <div class="carousel-item active">
     <div class="carousel-content">
         <div class="book-info">
-        <h2>LIGHT COLLECTION</h2>
-        <h1>King Kong Theory</h1>
-        <p>Virginie Despentes</p>
-        <button class="view-more">View more</button>
+            <h2>LIGHT COLLECTION</h2>
+            <h1>King Kong Theory</h1>
+            <p>Virginie Despentes</p>
+            <a href="{% url 'king' %}" class="view-more">View more</a>
         </div>
         <div class="book-cover">
-        <img src="{% static 'images/KING-KONG-THEORY.jpg' %}" class="d-block w-100" alt="King Kong Theory Cover">
+            <img src="{% static 'images/KING-KONG-THEORY.jpg' %}" class="d-block w-100" alt="King Kong Theory Cover">
         </div>
     </div>
     </div>
 
     <!-- Slide 2 -->
     <div class="carousel-item">
-    <div class="carousel-content">
+        <div class="carousel-content">
         <div class="book-info">
-        <h2>CURSED POETRY COLLECTION</h2>
-        <h1>The Flowers of Evil</h1>
-        <p>Charles Baudelaire</p>
-        <button class="view-more">View more</button>
+            <h2>CURSED POETRY COLLECTION</h2>
+            <h1>The Flowers of Evil</h1>
+            <p>Charles Baudelaire</p>
+            <button class="view-more" href="">View more</button>
         </div>
         <div class="book-cover">
-        <img src="{% static 'images/flowers_of_evil.jpg' %}" class="d-block w-100" alt="Flowers of Evil">
+            <img src="{% static 'images/flowers_of_evil.jpg' %}" class="d-block w-100" alt="Flowers of Evil">
         </div>
-    </div>
+        </div>
     </div>
 
     <!-- Slide 3 -->
     <div class="carousel-item">
     <div class="carousel-content">
         <div class="book-info">
-        <h2>THINKERS COLLECTION</h2>
-        <h1>Why the World Does Not Exist</h1>
-        <p>Markus Gabriel</p>
-        <button class="view-more">View more</button>
+            <h2>THINKERS COLLECTION</h2>
+            <h1>Why the World Does Not Exist</h1>
+            <p>Markus Gabriel</p>
+            <button class="view-more">View more</button>
         </div>
         <div class="book-cover">
         <img src="{% static 'images/why_world.jpg' %}" class="d-block w-100" alt="Why the World Doesn't Exist Cover">
@@ -126,7 +128,7 @@
             <div class="book-credits">$3</div>
         </div>
         <div class="book-card">
-            <img src="{% static 'igit merge booksmages/book3.jpg' %}" alt="Family Happiness">
+            <img src="{% static 'images/book3.jpg' %}" alt="Family Happiness">
             <div class="book-title">Family Happiness</div>
             <div class="book-author">Leo Tolstoy</div>
             <div class="book-credits">$2</div>
