@@ -112,6 +112,7 @@ body {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    text-decoration: none;
 }
 
 .view-more:hover {
@@ -305,105 +306,191 @@ button {
     overflow: hidden;
 }
 
-.footer {
-    width: 100%;
-    padding: 20px 40px;
-    margin-top: 40px;
-    background-color: #e2e2eb;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+.king-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+  
+/* Book Info Section */
+.king-book-info {
+text-align: center;
+margin-bottom: 20px;
 }
 
+.king-book-image {
+width: 150px;
+border-radius: 5px;
+}
+
+.king-book-title {
+font-size: 24px;
+font-weight: bold;
+margin: 10px 0;
+}
+
+.king-author, .king-publisher {
+font-size: 18px;
+color: #555;
+}
+
+/* Description Section */
+.king-description {
+margin-bottom: 20px;
+}
+
+.king-download-btn, .king-wishlist-btn {
+margin: 10px 5px;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+background-color: #007bff;
+color: #fff;
+cursor: pointer;
+}
+
+.king-download-btn:hover, .king-wishlist-btn:hover {
+background-color: #0056b3;
+}
+
+/* Tabs Section */
+.king-tabs {
+display: flex;
+margin-bottom: 20px;
+}
+
+.king-tab-btn {
+flex: 1;
+padding: 10px;
+background-color: #eee;
+border: none;
+cursor: pointer;
+text-align: center;
+}
+
+.king-tab-btn:hover {
+background-color: #ddd;
+}
+
+/* Active Tab Content */
+.king-tab-content {
+display: none;
+}
+
+.king-tab-content.active {
+display: block;
+}
+
+.king-tab-content ul {
+list-style: none;
+padding: 0;
+}
+
+.king-tab-content li {
+margin-bottom: 10px;
+}
+
+.footer {
+width: 100%;
+padding: 20px 40px;
+margin-top: 40px;
+background-color: #e2e2eb;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 20px;
+}
 /* Footer logo */
 .footer-logo .logo-circle {
-    width: 50px;
-    height: 50px;
-    background-color: black;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+width: 50px;
+height: 50px;
+background-color: black;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .footer-logo .logo-text {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
+color: white;
+font-size: 24px;
+font-weight: bold;
 }
 
 /* Footer links */
 .footer-links {
-    display: flex;
-    gap: 40px;
-    flex: 1;
+display: flex;
+gap: 40px;
+flex: 1;
 }
 
 .footer-section {
-    list-style: none;
-    color: #666;
-    flex-direction: column;
+list-style: none;
+color: #666;
+flex-direction: column;
 }
 
 .footer-section li {
-    margin-bottom: 8px;
-    font-size: 14px;
+margin-bottom: 8px;
+font-size: 14px;
 }
 
 /* Footer right side */
 .footer-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+display: flex;
+flex-direction: column;
+align-items: flex-end;
 }
 
 .footer-right p {
-    color: #666;
-    margin-bottom: 8px;
-    font-size: 14px;
+color: #666;
+margin-bottom: 8px;
+font-size: 14px;
 }
 
 .social-icons {
-    display: flex;
-    gap: 10px;
+display: flex;
+gap: 10px;
 }
 
 .icon {
-    font-size: 18px;
-    color: black;
-    cursor: pointer;
+font-size: 18px;
+color: black;
+cursor: pointer;
 }  
 * {
-    box-sizing: border-box;
+box-sizing: border-box;
 }
 
 #calendar {
-    color: #0f0f0f;
-    background-color: #53a4fc;
-    margin: 20px;
+color: #0f0f0f;
+background-color: #53a4fc;
+margin: 20px;
 }
 
 .fc-tooltip {
-    position: absolute;
-    background-color: #fff;
-    color: #333;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    font-size: 14px;
-    max-width: 200px;
+position: absolute;
+background-color: #fff;
+color: #333;
+padding: 10px;
+border-radius: 8px;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+z-index: 1000;
+font-size: 14px;
+max-width: 200px;
 }
 
 .fc-tooltip .tooltip-content h3 {
-    margin: 0 0 5px;
-    font-size: 16px;
-    color: #000;
+margin: 0 0 5px;
+font-size: 16px;
+color: #000;
 }
 
 .fc-tooltip .tooltip-content p {
-    margin: 2px 0;
-    font-size: 14px;
+margin: 2px 0;
+font-size: 14px;
 }

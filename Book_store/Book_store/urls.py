@@ -27,7 +27,6 @@ urlpatterns = [
     path('events/create_event/', create_event, name='create_event'),
     path('authors/', authors, name='authors'),
     path('pricing/', pricing, name='pricing'),
-    path('books/', books, name='books'),
     path('authors/stefan', stefan, name='stefan' ),
     path('authors/virginie', virginie, name='virginie' ),
     path('authors/leo', leo, name='leo' ),

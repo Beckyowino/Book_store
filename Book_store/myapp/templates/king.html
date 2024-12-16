@@ -15,7 +15,7 @@
 
     <script src="{% static 'script.js'%}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <title>Books</title>
 </head>
 <body>
@@ -39,56 +39,96 @@
             </div>
         </nav>
     </header>
-    <div class="book-detail-container">
-        <div class="book-cover">
-          <img src="king-kong-theory.jpg" alt="King Kong Theory">
+    
+    <div class="king-container">
+        <!-- Book Image and Title -->
+        <div class="king-book-info">
+          <img src="{% static 'images/KING-KONG-THEORY.jpg' %}" alt="King Kong Theory" class="king-book-image">
+          <h1 class="king-book-title">King Kong Theory</h1>
+          <h2 class="king-author">Virginie Despentes</h2>
+          <p class="king-publisher">Fitzcarraldo Editions</p>
         </div>
-        <div class="book-info-container">
-          <div class="book-info-tabs">
-            <button class="tab-btn active" data-tab="info">INFO</button>
-            <button class="tab-btn" data-tab="comments">COMMENTS</button>
-          </div>
-          <div class="book-info-content">
-            <div class="book-info-item" data-tab="info">
-              <h2>King Kong Theory</h2>
-              <p>by Virginie Despentes</p>
-              <p class="publisher">Fitzcarraldo Editions</p>
-              <p class="book-description">
-                Proin bibendum risus eu orci commodo auctor. Nulla tristique mollis nulla. Nam aliquam lacus quis finibus condimentum. Praesent non elementum libero, eget suscipit tortor. In molestie massa dui, vel euismod massa condimentum vitae. Ut nec ante nec nibh fermentum porta vel vel risus. Cras laoreet dui purus, a aliquet odio porta sed. Suspendisse eu neque auctor magna luctus fringilla vel eget elit. Donec porttitor turpis ex, vel pretium arcu fermentum id.
-              </p>
-              <div class="book-details">
-                <p>3 credits</p>
-                <button class="download-btn">Download</button>
-                <button class="wishlist-btn">Add to wish list</button>
-              </div>
-            </div>
-            <div class="book-info-item" data-tab="comments" style="display: none;">
-              <div class="review-item">
-                <div class="review-header">
-                  <div class="reviewer-info">
-                    <p class="reviewer-name">Lorem ipsum dolor</p>
-                    <p class="review-date">April 15, 2024</p>
-                  </div>
-                  <div class="review-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
-                </div>
-                <p class="review-text">Praesent non elementum libero, eget suscipit tortor. In molestie massa dui, vel euismod massa condimentum vitae. Ut nec ante nec nibh fermentum porta vel vel risus.</p>
-              </div>
-              <!-- Add more review items as needed -->
-            </div>
-          </div>
+    
+        <!-- Book Description -->
+        <div class="king-description">
+          <p>
+            Proin bibendum risus eu orci commodo auctor. Nulla tristique mollis nulla. Nam aliquam lacus quis finibus condimentum.
+            Praesent non elementum libero, eget suscipit tortor. In molestie massa dui...
+          </p>
+          <button class="king-download-btn">Download</button>
+          <button class="king-wishlist-btn">Add to wish list</button>
+        </div>
+    
+        <!-- Tabs Section -->
+        <div class="king-tabs">
+          <button class="king-tab-btn" onclick="showTab('info')">Info</button>
+          <button class="king-tab-btn" onclick="showTab('comments')">Comments</button>
+        </div>
+    
+        <!-- Tab Content -->
+        <div id="king-info" class="king-tab-content active">
+          <ul>
+            <li><strong>Themes:</strong> Lorem ipsum dolor</li>
+            <li><strong>Author:</strong> Jane Doe</li>
+            <li><strong>Translator:</strong> John Smith</li>
+            <li><strong>Edition:</strong> 1ª</li>
+            <li><strong>Binding:</strong> Board</li>
+            <li><strong>Format:</strong> 13 x 21 cm</li>
+            <li><strong>Pages:</strong> 1040</li>
+          </ul>
+        </div>
+        <div id="king-comments" class="king-tab-content">
+          <p>"Proin bibendum risus eu orci commodo auctor."</p>
+          <p>"Cras laoreet dui purus, a aliquet odio porta sed."</p>
         </div>
       </div>
-      
-  <div class="related-books-container">
-    <h3>Related books</h3>
-    <!-- Add related book items here -->
-  </div>
+    
+    <script>
+        var coll = document.getElementsByClassName("accordion");
+        for (let i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+
+        const infoTab = document.getElementById('infoTab');
+        const commentsTab = document.getElementById('commentsTab');
+        const infoContent = document.getElementById('infoContent');
+        const commentsContent = document.getElementById('commentsContent');
+
+        infoTab.onclick = function() {
+            infoTab.classList.add('active');
+            commentsTab.classList.remove('active');
+            infoContent.classList.remove('hidden');
+            commentsContent.classList.add('hidden');
+        };
+
+        commentsTab.onclick = function() {
+            commentsTab.classList.add('active');
+            infoTab.classList.remove('active');
+            commentsContent.classList.remove('hidden');
+            infoContent.classList.add('hidden');
+        };
+
+        function showTab(tabName) {
+        // Hide all tab contents
+        const tabContents = document.querySelectorAll('.king-tab-content');
+        tabContents.forEach((tab) => tab.classList.remove('active'));
+
+        // Show the selected tab content
+        const activeTab = document.getElementById(`king-${tabName}`);
+        if (activeTab) {
+            activeTab.classList.add('active');
+        }
+        }
+
+    </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
